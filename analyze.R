@@ -109,5 +109,8 @@ qplot(x=X1, y=X2, data=melt(cor(final[5:14])), fill=value, geom="tile") +
   xlab("") + ylab("")
 dev.off()
 
-fit <- lm(mean_time ~ Binary + CSS + Flash + Font + HTML + Image + JavaScript + JSON + Text + Unknown, data=final)
+fit <- lm(mean_time ~ num_requests, data=final)
 summary(fit)
+
+fit2 <- lm(mean_time ~ Binary + CSS + Flash + Font + HTML + Image + JavaScript + JSON + Text + Unknown, data=final)
+summary(fit2)
