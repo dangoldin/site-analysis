@@ -10,6 +10,7 @@ var page = require('webpage').create(),
     outfile = system.args[2] || 'out.csv',
     f = fs.open(outfile, 'w'),
     ft = fs.open('out-times.csv', 'w'),
+    iterations = 10,
     url;
 
 function handle_page(url) {
@@ -73,7 +74,12 @@ function get_domains(f) {
     return domains;
 }
 
-for (var i = 0; i < 50; i++) {
+/*
+Can change "iterations" to run more times (note that this is useful for the -times.csv file
+but not the general requests file)
+*/
+
+for (var i = 0; i < iterations; i++) {
     urls = urls.concat(domains.slice(0));
 };
 
