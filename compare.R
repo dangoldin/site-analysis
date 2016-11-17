@@ -4,8 +4,6 @@ require("plyr")
 require("ggthemes")
 require("directlabels")
 
-setwd("/Users/danielgoldin/Dropbox/dev/web/site-js-usage")
-
 times <- read.csv("out-times-beijing.csv", sep="\t", col.names=c("url", "time"))
 times$url <- as.character(times$url)
 final <- ddply(times,~url,summarise,mean_time_beijing=mean(time),sd_time_beijing=sd(time))

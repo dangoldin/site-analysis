@@ -3,8 +3,6 @@ require("reshape")
 require("plyr")
 require("ggthemes")
 
-setwd("/Users/danielgoldin/Dropbox/dev/web/site-js-usage")
-
 get_type <- function (x) {
   x <- tolower(x)
   res <- "Unknown"
